@@ -1,0 +1,192 @@
+.header{
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    z-index: 1;
+
+    &__wrapper{
+        @include centerAll;
+    }
+
+    .branding{
+        ul{
+            display: none;
+        }
+    }
+
+    &__actions{
+        display: none;
+    }
+
+    &__nav{
+        position: absolute;
+        background: $clr-light;
+        right: -100rem;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        transition: .5s ease;
+
+        &.open{
+            right: 0;
+            transition: .5s ease;
+            padding: 2rem;
+        }
+
+        &__btn{
+            ul{
+                padding: 5rem 2rem;
+                box-shadow: 0 -10px 12px rgba(29,28,29,.04);
+
+                li{
+                    a{
+                        text-align: center;
+                        letter-spacing: .1rem;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__content{
+        min-height: 65vh;
+        overflow-y: scroll;
+        padding: 0 1.5rem;
+
+        .nav{
+            ul{
+                li{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+    
+                    &:last-child{
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+    
+                    a{
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    &__product{
+        h4{
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 1.8rem;
+                font-weight: 600;
+    
+                i{
+                    color: $clr-gray;
+                    transition: .5s ease;
+
+                    &.open{
+                        transform: rotate(90deg);
+                        transition: .5s ease;
+                    }
+                }
+            }
+        }
+
+        ul{
+            max-height: 0rem;
+            overflow: hidden;
+            transition: .5s ease;
+
+            &.open{
+                max-height: 25rem;
+                margin: 1rem 0;
+                transition: .5s ease;
+            }
+
+            li{
+                margin: 2rem;
+
+                a{
+                    font-size: 1.8rem;
+                    font-weight: 400;
+
+                    &:hover{
+                        color: $clr-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .toggle__menu{
+      span{
+        width: 1.5rem;
+        height: .2rem;
+        background-color: $clr-light;
+        display: block;
+        border-radius: 5rem;
+        transition: .5s ease;
+
+        &:nth-child(2){
+            margin: .3rem 0;
+        }
+      }
+
+      &.open{
+        span{
+            background-color: $clr-dark;
+
+            &:first-child{
+                transform: translate(0, 5px) rotate(230deg);
+                transition: .5s ease-in;
+            }
+
+            &:nth-child(2){
+                opacity: 0;
+                transition: .5s ease-in;
+            }
+
+            &:last-child{
+                transform: translate(0, -5px) rotate(-230deg);
+                transition: .5s ease-in;  
+            }
+        }
+      }
+    }
+
+    @include mediaQuery($break-lg){
+        &__nav, .toggle__menu{
+            display: none;
+        }
+
+        &__actions{
+            display: unset;
+
+            ul{
+                display: flex;
+                align-items: center;
+
+                li{
+                    margin-right: 2rem;
+
+                    &:nth-child(3){
+                        a{
+                            border: 1px solid $clr-light;
+                        }
+                    }
+
+                    a{
+                        color: $clr-light;
+                    }
+                }
+            }
+        }
+    }
+}

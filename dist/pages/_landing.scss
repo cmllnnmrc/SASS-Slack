@@ -1,0 +1,113 @@
+.banner{
+    background: $clr-purple;
+    padding-top: 8rem;
+
+    &__wrapper{
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    &__text{
+        text-align: center;
+
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $clr-light;
+
+            span{
+                color: $clr-orange;
+            }
+        }
+
+        p{
+            color: $clr-light;
+            font-weight: 600;
+            line-height: 1.5;
+            margin: 1.5rem 0 3.5rem 0;
+        }
+    }
+
+    &__actions{
+        ul{
+            text-align: center;
+            li{
+                margin-bottom: 1.5rem;
+
+                a{
+                    width: 100%;
+                    letter-spacing: .1rem;
+                }
+
+                &:last-child{
+                    a{
+                        display: grid;
+                        grid-template-columns: auto auto auto;
+                        padding: .5rem;
+    
+                        img{
+                            @include imgFit(5rem, 100%);
+                            background: $clr-light;
+                            padding: 1.3rem;
+                            border-radius: .3rem;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &__vid{
+        video{
+            max-width: 130%;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        padding-top: 15rem;
+
+        &__content{
+            padding: 1.5rem;
+            max-width: 120rem;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        &__vid{
+            video{
+                max-width: 50%;
+            }
+        }
+
+        &__actions{
+            ul{
+                display: flex;
+                align-items: center;
+                text-align: center;
+                li{
+                    a{
+                        font-size: 2rem;
+                        min-height: 6.5rem;
+                        min-width: 30rem;
+                    }
+    
+                    &:last-child{
+                        a{
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            padding: .5rem 2rem .5rem .5rem;
+        
+                            img{
+                                border-radius: .3rem;
+                                margin-right: 2rem;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

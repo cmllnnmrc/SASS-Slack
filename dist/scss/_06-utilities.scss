@@ -1,0 +1,127 @@
+.btn{
+    display: inline-block;
+    padding: 2rem 1.5rem;
+    border-radius: .3rem;
+  
+    &.violet{
+        font-size: 1.3rem;
+        font-weight: 800;
+        align-items: center;
+        color: $clr-light;
+        background: $clr-purple;
+        border: 1px solid $clr-purple;
+
+        &:hover{
+            background: $clr-d-purple;
+          }
+    }
+  
+    &.violet-shallow{
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $clr-purple;
+        background: $clr-light;
+        border: 1px solid $clr-purple;
+    }
+
+    &.blue{
+        font-size: 1.3rem;
+        font-weight: 800;
+        align-items: center;
+        color: $clr-light;
+        background: $clr-blue;
+        border: 1px solid $clr-blue;
+    }
+  }
+
+  $colors: (
+    "dark": $clr-dark,
+    "light": $clr-light,
+    "orange": $clr-orange,
+    "purple": $clr-purple,
+    "blue": $clr-blue,
+    "d-purple": $clr-d-purple,
+    "gray": $clr-gray,
+  );
+
+  @each $key, $val in $colors{
+    .text{
+        &--#{$key}{
+            color: $val;
+        }
+    }
+
+    .bg{
+        &--#{$key}{
+            color: $val;
+        }
+    }
+  }
+
+  $displays: flex, block, none, unset, inline, inline-block, inline-flex, contents;
+
+  @each $display in $displays{
+    .d{
+        &--#{$display}{
+            display: $display;
+        }
+    }
+  }
+
+  $alignments: (
+    "center": center,
+    "start": start,
+    "end": end,
+    "f-start": flex-start,
+    "f-end": flex-end,
+    "between": space-between,
+    "around": space-around,
+    "evenly": space-evenly,
+  );
+
+  @each $key, $val in $alignments{
+    .text{
+        &--#{$key}{
+            text-align: $val;
+        }
+    }
+
+    .justify{
+        &--#{$key}{
+            justify-content: $val;
+        }
+    }
+
+    .align{
+        &--#{$key}{
+            align-items: $val;
+        }
+    }
+
+  }
+
+  @for $i from 0 through 20{
+    .mr--#{$i}{
+        margin-right: $i + rem;
+    }
+
+    .ml--#{$i}{
+        margin-left: $i + rem;
+    }
+
+    .mt--#{$i}{
+        margin-top: $i + rem;
+    }
+
+    .mb--#{$i}{
+        margin-bottom: $i + rem;
+    }
+
+    .mx--#{$i}{
+        margin: 0 $i + rem;
+    } 
+
+    .my--#{$i}{
+        margin: $i + rem 0;
+    } 
+  }
